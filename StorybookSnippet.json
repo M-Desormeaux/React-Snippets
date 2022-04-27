@@ -1,0 +1,25 @@
+"Storybook boilerplate": {
+  "prefix": "story",
+  "body": [
+    "import React from 'react';",
+    "import { ${TM_DIRECTORY/.*\\/(.*)$/$1/g} } from './${TM_DIRECTORY/.*\\/(.*)$/$1/g}';",
+    "",
+    "const ${TM_FILENAME_BASE/(.*)\\..+$/$1/} = {",
+    "  component: ${TM_DIRECTORY/.*\\/(.*)$/$1/g},",
+    "  title: 'features/$1'",
+    "};",
+    "",
+    "const Template = args => {",
+    "  return <></>;",
+    "};",
+    "",
+    "const defaultArgs = {",
+    "  $0",
+    "};",
+    "",
+    "export const ${2:Default} = Template.bind({});",
+    "${2:Default}.args = { ...defaultArgs };",
+    "",
+    "export default ${TM_FILENAME_BASE/(.*)\\..+$/$1/}"
+  ]
+}
